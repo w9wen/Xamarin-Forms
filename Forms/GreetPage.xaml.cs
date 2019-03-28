@@ -12,13 +12,13 @@ namespace Forms
             InitializeComponent();
             Slider_Temperature.Value = 0.5;
 
-            if (Device.RuntimePlatform == Device.iOS )
-            {
-                Padding = new Thickness(0, 20, 0, 0);
-            }else if (Device.RuntimePlatform == Device.Android)
-            {
-                Padding = new Thickness(0, 30, 0, 0);
-            }
+            //if (Device.RuntimePlatform == Device.iOS )
+            //{
+            //    Padding = new Thickness(0, 20, 0, 0);
+            //}else if (Device.RuntimePlatform == Device.Android)
+            //{
+            //    Padding = new Thickness(0, 30, 0, 0);
+            //}
 
                       
         }
