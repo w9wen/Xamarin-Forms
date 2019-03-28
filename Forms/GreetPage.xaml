@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.GreetPage">
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Forms.GreetPage">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="Hello World" x:Name="Label_SliderValue"></Label>
-        <Button Text="Click Me" Clicked="Handle_Clicked"></Button>
-        <Slider ValueChanged="Handle_ValueChanged" x:Name="Slider_Temperature"/>
+        <Label Text="{Binding Source={x:Reference Slider_Temperature}, Path=Value ,StringFormat='Value is {0:F2}'}" x:Name="Label_SliderValue"></Label>
+<!--        <Button Text="Click Me" Clicked="Handle_Clicked"></Button>-->
+<!--        <Slider ValueChanged="Handle_ValueChanged" x:Name="Slider_Temperature"/>-->
+        <Slider x:Name="Slider_Temperature"/>
     </StackLayout>
 </ContentPage>
