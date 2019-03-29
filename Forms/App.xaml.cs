@@ -10,7 +10,7 @@ namespace Forms
         {
             InitializeComponent();
 
-            MainPage = new StackPage();
+            MainPage = new StackPage1();
         }
 
         protected override void OnStart()
