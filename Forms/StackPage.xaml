@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="Forms.StackPage"
     Padding="0, 50, 0, 0">
-    <StackLayout 
+<!--    <StackLayout 
         Orientation="Horizontal"
         Padding="40"
         Spacing="20"
@@ -16,5 +16,5 @@
         </StackLayout>
         <Label Text="Label 2"/>
         <Label Text="Label 3"/>
-    </StackLayout>
+    </StackLayout>               -->
 </ContentPage>
