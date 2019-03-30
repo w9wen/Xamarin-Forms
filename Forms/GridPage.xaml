@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.GridPage"
              Padding="0, 50, 0, 0">
-    <Grid BackgroundColor="Yellow"
+ <!--   <Grid BackgroundColor="Yellow"
           RowSpacing="40"
           ColumnSpacing="40">
         <Grid.RowDefinitions>
@@ -20,5 +20,5 @@
         <Label Grid.Row="1" Grid.Column="1" Text="Label 4" BackgroundColor="Silver"/>
         <Label Grid.Row="2" Grid.ColumnSpan="3" Text="ColumnSpan" BackgroundColor="Silver"/>
         <Label Grid.Column="2" Text="RowSpan" Grid.RowSpan="3" BackgroundColor="Silver"/>
-    </Grid>
+    </Grid>-->
 </ContentPage>

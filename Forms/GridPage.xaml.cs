@@ -10,6 +10,12 @@ namespace Forms
         public GridPage()
         {
             InitializeComponent();
+            var gird = new Grid 
+            {
+                RowSpacing = 20,
+                ColumnSpacing = 40, 
+            };
+            var label = new Label { };
         }
     }
 }
