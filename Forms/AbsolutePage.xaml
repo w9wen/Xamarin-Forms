@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.AbsolutePage"
              Padding="0, 20, 0, 0">
-    <AbsoluteLayout BackgroundColor="Yellow">
+    <!--<AbsoluteLayout BackgroundColor="Yellow">
         <BoxView Color="Aqua" 
                  AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                  AbsoluteLayout.LayoutFlags="All"/>
@@ -11,5 +11,5 @@
         <Button Text="Get Started" BackgroundColor="Silver" TextColor="White"
                 AbsoluteLayout.LayoutBounds="0, 1, 1, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"/>
-    </AbsoluteLayout>
+    </AbsoluteLayout>-->
 </ContentPage>
