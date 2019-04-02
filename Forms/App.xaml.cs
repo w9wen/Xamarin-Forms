@@ -14,7 +14,8 @@ namespace Forms
             //MainPage = new GridPage();
             //MainPage = new GridPage1();
             //MainPage = new GridPage2();
-            MainPage = new AbsolutePage();
+            //MainPage = new AbsolutePage();
+            MainPage = new AbsolutePage1();
         }
 
         protected override void OnStart()

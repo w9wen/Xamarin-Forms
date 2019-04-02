@@ -17,4 +17,9 @@
   <ItemGroup>
     <Compile Remove="GridPage.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AbsolutePage.xaml.cs">
+      <DependentUpon>AbsolutePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
