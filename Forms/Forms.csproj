@@ -22,4 +22,7 @@
       <DependentUpon>AbsolutePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
 </Project>

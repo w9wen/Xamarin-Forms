@@ -1,4 +1,5 @@
 ﻿using System;
+using Forms.Images;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +19,10 @@ namespace Forms
             //MainPage = new AbsolutePage1();
             //MainPage = new AbsolutePage2();
             //MainPage = new RelativePage();
-            MainPage = new RelativePage1();
+            //MainPage = new RelativePage1();
+
+            // 04. Images
+            MainPage = new ImagePage();
         }
 
         protected override void OnStart()
