@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage BackgroundColor="Black"
+             xmlns:local="clr-namespace:Forms; assembly=Forms"
     xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Images.ImagePage">
 <!--    <AbsoluteLayout>
         <ActivityIndicator IsRunning="{Binding Source={x:Reference Image_Sport}, Path=IsLoading}" Color="White"
@@ -7,5 +8,6 @@
         <Image x:Name="Image_Sport" Aspect="AspectFill" 
                AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
     </AbsoluteLayout>-->
-    <Image x:Name="Image_Sport" Aspect="AspectFill" />
+    <!--<Image Source="{local:EmbeddedImage ResourceId=Forms.Images.background.jpg}" x:Name="Image_Sport" Aspect="AspectFill" />-->
+    <Image Source="{local:EmbeddedImage Forms.Images.background.jpg}" x:Name="Image_Sport" Aspect="AspectFill" />
 </ContentPage>
