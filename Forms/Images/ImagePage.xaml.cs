@@ -11,7 +11,7 @@ namespace Forms.Images
         {
             InitializeComponent();
             var imageSrouce = (UriImageSource)ImageSource.FromUri(new Uri("http://lorempixel.com/1920/1080/sports/7/"));
-            //var imageSource = new UriImageSource { Uri = new Uri ("https:") };
+            //var imageSource = new UriImageSource { Uri = new Uri ("http://lorempixel.com/1920/1080/sports/7/") };
             imageSrouce.CachingEnabled = false;
             //imageSource.CacheValidity = TimeSpan.FromHours(10);
 
