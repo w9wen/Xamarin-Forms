@@ -17,6 +17,8 @@ namespace Forms.Images
 
             Image_Sport.Source = imageSrouce;
             //Image_Sport.Source = "http://lorempixel.com/1920/1080/sports/7/";
+
+            //Image_Sport.Aspect = Aspect.AspectFill;
         }
     }
 }
