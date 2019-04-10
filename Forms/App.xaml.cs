@@ -17,7 +17,8 @@ namespace Forms
             //MainPage = new AbsolutePage();
             //MainPage = new AbsolutePage1();
             //MainPage = new AbsolutePage2();
-            MainPage = new RelativePage();
+            //MainPage = new RelativePage();
+            MainPage = new RelativePage1();
         }
 
         protected override void OnStart()
