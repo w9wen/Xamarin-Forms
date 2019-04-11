@@ -21,6 +21,9 @@ namespace Forms.Images
             ////Image_Sport.Aspect = Aspect.AspectFill;
 
             //Image_Sport.Source = ImageSource.FromResource("Forms.Images.background.jpg");
+            //Button_Clock.Image = (FileImageSource)ImageSource.FromFile("clock.png");
+
+
         }
     }
 }
