@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage BackgroundColor="White"
              xmlns:local="clr-namespace:Forms; assembly=Forms"
-    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Images.ImagePage">
+             xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Images.ImagePage"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
 <!--    <AbsoluteLayout>
         <ActivityIndicator IsRunning="{Binding Source={x:Reference Image_Sport}, Path=IsLoading}" Color="White"
                            AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
@@ -11,12 +12,21 @@
     <!--<Image Source="{local:EmbeddedImage ResourceId=Forms.Images.background.jpg}" x:Name="Image_Sport" Aspect="AspectFill" />-->
 <!--    <Image Source="{local:EmbeddedImage Forms.Images.background.jpg}" x:Name="Image_Sport" Aspect="AspectFill" />-->
 <!--    <Button Image="clock.png"/>-->
-    <Button x:Name="Button_Clock">
-        <Button.Image>
-            <OnPlatform x:TypeArguments="FileImageSource" 
-                        iOS="clock.png"
-                        Android="clock.png"/>
-        </Button.Image>
-    </Button>
-    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button x:Name="Button_Clock">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource" 
+                            iOS="clock.png"
+                            Android="clock.png"/>
+            </Button.Image>
+        </Button>
+        <controls:CircleImage
+            WidthRequest="100"
+            HeightRequest="100"
+            Aspect="AspectFill"
+            Source="http://placekitten.com/400/300"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+        />
+    </StackLayout>
 </ContentPage>
