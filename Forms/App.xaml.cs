@@ -22,7 +22,8 @@ namespace Forms
             //MainPage = new RelativePage1();
 
             // 04. Images
-            MainPage = new ImagePage();
+            //MainPage = new ImagePage();
+            MainPage = new ImagePage1();
         }
 
         protected override void OnStart()

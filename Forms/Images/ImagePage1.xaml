@@ -1,19 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Forms.Images.ImagePage1"
              BackgroundColor="Aqua">
     <AbsoluteLayout BackgroundColor="Gray">
-        <StackLayout BackgroundColor="White" Orientation="Horizontal"
-                     HorizontalOptions="Center" VerticalOptions="Center"
-                     AbsoluteLayout.LayoutBounds="0, 0,1,0"
-                     AbsoluteLayout.LayoutFlags="All">
-            <Button/>
-            <ActivityIndicator IsRunning="True"/>
-            <Button/>
-        </StackLayout>
-        <Image Source="http://lorempixel.com/1920/1080/city/1"
+        
+        <Button Image="left.png" BorderColor="Green" Clicked="Previous_Clicked"
+                AbsoluteLayout.LayoutBounds="0.05, 0.05, 100, 100"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference Image_Gallery}, Path=IsLoading}" Color="White"
+                           AbsoluteLayout.LayoutBounds="0.5,0.05,100,100"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button Image="right.png" BorderColor="Red" Clicked="Next_Clicked"
+                AbsoluteLayout.LayoutBounds="0.95,0.05,100,100"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        
+        <Image x:Name="Image_Gallery"
                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                   AbsoluteLayout.LayoutFlags="All"/>
+                   AbsoluteLayout.LayoutFlags="All"
+                   />
     </AbsoluteLayout>
 </ContentPage>
