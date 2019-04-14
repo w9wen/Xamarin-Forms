@@ -34,17 +34,16 @@ namespace Forms.Images
             //_currentImageId++;
             //LoadImage();
             var button = (Button)sender;
-            switch (button.Text)
+
+            if (button == Button_Previous)
             {
-                case "Previous":
-                    _currentImageId--;
-                    break;
-                case "Next":
-                    _currentImageId++;
-                    break;
-                default:
-                    break;
+                _currentImageId--;
             }
+            else if (button == Button_Next)
+            {
+                _currentImageId++;
+            }
+
             if (_currentImageId==0)
             {
                 _currentImageId = 10;
