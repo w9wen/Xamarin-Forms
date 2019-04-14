@@ -11,6 +11,7 @@ namespace Forms
         {
             InitializeComponent();
 
+            //MainPage = new GreetPage();
             //MainPage = new StackPage();
             //MainPage = new GridPage();
             //MainPage = new GridPage1();
