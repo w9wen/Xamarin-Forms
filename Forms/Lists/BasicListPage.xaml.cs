@@ -18,10 +18,20 @@ namespace Forms.Lists
             //    "Jack",
             //};
             //ListView_Name.ItemsSource = names;
-            ListView_Name.ItemsSource = new List<Contact>
+            //ListView_Name.ItemsSource = new List<Contact>
+            //{
+            //    new Contact{Name="William",ImageUrl="http://lorempixel.com/100/100/people/1"},
+            //    new Contact{Name="Henry",ImageUrl="http://lorempixel.com/100/100/people/2", Status="Hello, Let's talk"},
+            //};
+
+            ListView_Name.ItemsSource = new List<ContactGroup>
             {
-                new Contact{Name="William",ImageUrl="http://lorempixel.com/100/100/people/1"},
-                new Contact{Name="Henry",ImageUrl="http://lorempixel.com/100/100/people/2", Status="Hello, Let's talk"},
+                new ContactGroup("W", "W"){ 
+                    new Contact{Name="William", Status="Let's talk about Xamarin", ImageUrl="http://lorempixel.com/100/100/people/2",}
+                },
+                new ContactGroup("H", "H"){ 
+                    new Contact{Name="Henry", Status="Let's talk about Minecraft", ImageUrl="http://lorempixel.com/100/100/people/4",}
+                },
             };
         }
     }
