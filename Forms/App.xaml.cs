@@ -24,7 +24,10 @@ namespace Forms
 
             // 04. Images
             //MainPage = new ImagePage();
-            MainPage = new ImagePage1();
+            //MainPage = new ImagePage1();
+
+            // 05. Lists
+            MainPage = new Forms.Lists.BasicListPage();
         }
 
         protected override void OnStart()
