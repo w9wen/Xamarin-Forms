@@ -34,5 +34,17 @@ namespace Forms.Lists
                 },
             };
         }
+
+        void ListView_Name_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            var contact = (Contact)e.SelectedItem;
+            DisplayAlert("Selected", contact.Name, "OK");
+        }
+
+        void ListView_Name_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            var contact = (Contact)e.Item;
+            DisplayAlert("Tapped", contact.Name, "OK");
+        }
     }
 }

@@ -4,7 +4,9 @@
     <ListView x:Name="ListView_Name" HasUnevenRows="true" 
               IsGroupingEnabled="true"
               GroupDisplayBinding="{Binding Title}"
-              GroupShortNameBinding="{Binding ShortTitle}">
+              GroupShortNameBinding="{Binding ShortTitle}"
+              ItemTapped="ListView_Name_ItemTapped"
+              ItemSelected="ListView_Name_ItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
 <!--                <TextCell Text="{Binding Name}" Detail="{Binding Status}"/>-->
