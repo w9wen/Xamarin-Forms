@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Lists.BasicListPage">
 <!--    <ListView x:Name="ListView_Name" SeparatorVisibility="Default" SeparatorColor="Aqua"/>-->
-    <ListView x:Name="ListView_Name">
+    <ListView x:Name="ListView_Name" HasUnevenRows="true">
         <ListView.ItemTemplate>
             <DataTemplate>
 <!--                <TextCell Text="{Binding Name}" Detail="{Binding Status}"/>-->
-                <ImageCell Text="{Binding Name}" Detail="{Binding Status}" ImageSource="{Binding ImageUrl}"/>
+<!--                <ImageCell Text="{Binding Name}" Detail="{Binding Status}" ImageSource="{Binding ImageUrl}"/>-->
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" BackgroundColor="Aqua" Padding="5">
+                        <Image Source="{Binding ImageUrl}"/>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Status}"/>
+                        </StackLayout>
+                        <Button Text="Follow" />
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
