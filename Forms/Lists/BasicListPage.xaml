@@ -4,7 +4,9 @@
     <ListView x:Name="ListView_Name" HasUnevenRows="true" 
               IsGroupingEnabled="False"
               ItemTapped="ListView_Name_ItemTapped"
-              ItemSelected="ListView_Name_ItemSelected">        
+              ItemSelected="ListView_Name_ItemSelected"
+              IsPullToRefreshEnabled="True"
+              Refreshing="ListView_Name_Refreshing">        
               <!--GroupDisplayBinding="{Binding Title}"
               GroupShortNameBinding="{Binding ShortTitle}"-->        
         <ListView.ItemTemplate>

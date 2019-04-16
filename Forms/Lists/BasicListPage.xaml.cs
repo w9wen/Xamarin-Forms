@@ -39,13 +39,23 @@ namespace Forms.Lists
             //    },
             //};
 
+            //_contacts = new ObservableCollection<Contact>
+            //{
+            //    new Contact{Name="William", ImageUrl="http://lorempixel.com/100/100/people/5", Status="Code Master"},
+            //    new Contact{Name="Henry", ImageUrl="http://lorempixel.com/100/100/people/6", Status="Code Player"},
+            //};
+
+            ListView_Name.ItemsSource = GetContacts();
+        }
+
+        private ObservableCollection<Contact> GetContacts()
+        {
             _contacts = new ObservableCollection<Contact>
             {
                 new Contact{Name="William", ImageUrl="http://lorempixel.com/100/100/people/5", Status="Code Master"},
                 new Contact{Name="Henry", ImageUrl="http://lorempixel.com/100/100/people/6", Status="Code Player"},
             };
-
-            ListView_Name.ItemsSource = _contacts;
+            return _contacts;
         }
 
         void ListView_Name_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -73,6 +83,12 @@ namespace Forms.Lists
             var contact = (sender as MenuItem).CommandParameter as Contact;
             _contacts.Remove(contact);
             DisplayAlert("Delete", contact.Name, "OK");
+        }
+
+        private void ListView_Name_Refreshing(object sender, EventArgs e)
+        {
+            ListView_Name.ItemsSource = GetContacts();
+            ListView_Name.EndRefresh();
         }
     }
 }
