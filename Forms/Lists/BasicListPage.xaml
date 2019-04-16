@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Lists.BasicListPage">
 <!--    <ListView x:Name="ListView_Name" SeparatorVisibility="Default" SeparatorColor="Aqua"/>-->
     <ListView x:Name="ListView_Name" HasUnevenRows="true" 
-              IsGroupingEnabled="true"
-              GroupDisplayBinding="{Binding Title}"
-              GroupShortNameBinding="{Binding ShortTitle}"
+              IsGroupingEnabled="False"
               ItemTapped="ListView_Name_ItemTapped"
-              ItemSelected="ListView_Name_ItemSelected">
+              ItemSelected="ListView_Name_ItemSelected">        
+              <!--GroupDisplayBinding="{Binding Title}"
+              GroupShortNameBinding="{Binding ShortTitle}"-->        
         <ListView.ItemTemplate>
             <DataTemplate>
 <!--                <TextCell Text="{Binding Name}" Detail="{Binding Status}"/>-->
@@ -20,6 +20,10 @@
                         </StackLayout>
                         <Button Text="Follow" />
                     </StackLayout>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Call" Clicked="MenuItem_Call_Clicked" CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete" Clicked="MenuItem_Delete_Clicked" CommandParameter="{Binding .}" IsDestructive="True"/>
+                    </ViewCell.ContextActions>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

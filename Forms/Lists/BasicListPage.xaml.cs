@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Forms.Models;
 using Xamarin.Forms;
 
@@ -7,6 +8,10 @@ namespace Forms.Lists
 {
     public partial class BasicListPage : ContentPage
     {
+        //private List<ContactGroup> _contacts;
+        //private List<Contact> _contacts;
+        private ObservableCollection<Contact> _contacts;
+
         public BasicListPage()
         {
             InitializeComponent();
@@ -24,15 +29,23 @@ namespace Forms.Lists
             //    new Contact{Name="Henry",ImageUrl="http://lorempixel.com/100/100/people/2", Status="Hello, Let's talk"},
             //};
 
-            ListView_Name.ItemsSource = new List<ContactGroup>
+            //_contacts = new List<ContactGroup>
+            //{
+            //    new ContactGroup("W", "W"){
+            //        new Contact{Name="William", Status="Let's talk about Xamarin", ImageUrl="http://lorempixel.com/100/100/people/2",}
+            //    },
+            //    new ContactGroup("H", "H"){
+            //        new Contact{Name="Henry", Status="Let's talk about Minecraft", ImageUrl="http://lorempixel.com/100/100/people/4",}
+            //    },
+            //};
+
+            _contacts = new ObservableCollection<Contact>
             {
-                new ContactGroup("W", "W"){ 
-                    new Contact{Name="William", Status="Let's talk about Xamarin", ImageUrl="http://lorempixel.com/100/100/people/2",}
-                },
-                new ContactGroup("H", "H"){ 
-                    new Contact{Name="Henry", Status="Let's talk about Minecraft", ImageUrl="http://lorempixel.com/100/100/people/4",}
-                },
+                new Contact{Name="William", ImageUrl="http://lorempixel.com/100/100/people/5", Status="Code Master"},
+                new Contact{Name="Henry", ImageUrl="http://lorempixel.com/100/100/people/6", Status="Code Player"},
             };
+
+            ListView_Name.ItemsSource = _contacts;
         }
 
         void ListView_Name_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -45,6 +58,21 @@ namespace Forms.Lists
         {
             var contact = (Contact)e.Item;
             DisplayAlert("Tapped", contact.Name, "OK");
+        }
+
+        private void MenuItem_Call_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var contact = menuItem.CommandParameter as Contact;
+
+            DisplayAlert("Call", contact.Name, "OK");
+        }
+
+        private void MenuItem_Delete_Clicked(object sender, EventArgs e)
+        {
+            var contact = (sender as MenuItem).CommandParameter as Contact;
+            _contacts.Remove(contact);
+            DisplayAlert("Delete", contact.Name, "OK");
         }
     }
 }
