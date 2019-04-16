@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Forms.Models;
 using Xamarin.Forms;
 
@@ -10,7 +11,8 @@ namespace Forms.Lists
     {
         //private List<ContactGroup> _contacts;
         //private List<Contact> _contacts;
-        private ObservableCollection<Contact> _contacts;
+        //private ObservableCollection<Contact> _contacts;
+        private IEnumerable<Contact> _contacts;
 
         public BasicListPage()
         {
@@ -48,14 +50,21 @@ namespace Forms.Lists
             ListView_Name.ItemsSource = GetContacts();
         }
 
-        private ObservableCollection<Contact> GetContacts()
+        //private ObservableCollection<Contact> GetContacts(string searchText = null)
+        private IEnumerable<Contact> GetContacts(string searchText = null)
         {
             _contacts = new ObservableCollection<Contact>
             {
                 new Contact{Name="William", ImageUrl="http://lorempixel.com/100/100/people/5", Status="Code Master"},
                 new Contact{Name="Henry", ImageUrl="http://lorempixel.com/100/100/people/6", Status="Code Player"},
             };
-            return _contacts;
+
+            if (String.IsNullOrWhiteSpace(searchText))
+            {
+                return _contacts;
+            }
+            //return _contacts;
+            return _contacts.Where(c => c.Name.StartsWith(searchText));
         }
 
         void ListView_Name_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -81,7 +90,7 @@ namespace Forms.Lists
         private void MenuItem_Delete_Clicked(object sender, EventArgs e)
         {
             var contact = (sender as MenuItem).CommandParameter as Contact;
-            _contacts.Remove(contact);
+            //_contacts.Remove(contact);
             DisplayAlert("Delete", contact.Name, "OK");
         }
 
@@ -89,6 +98,11 @@ namespace Forms.Lists
         {
             ListView_Name.ItemsSource = GetContacts();
             ListView_Name.EndRefresh();
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ListView_Name.ItemsSource = GetContacts(e.NewTextValue);
         }
     }
 }
