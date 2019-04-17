@@ -33,10 +33,11 @@ namespace Forms
             //MainPage = new AirbnbPage();
 
             // 06. Navigation
-            MainPage = new NavigationPage(new WelcomePage()) {
-                BarBackgroundColor = Color.Gray,
-                BarTextColor = Color.White,
-            };
+            //MainPage = new NavigationPage(new WelcomePage()) {
+            //    BarBackgroundColor = Color.Gray,
+            //    BarTextColor = Color.White,
+            //};
+            MainPage =new NavigationPage( new ContactsPage());
         }
 
         protected override void OnStart()
