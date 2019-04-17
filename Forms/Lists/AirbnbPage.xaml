@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.Lists.AirbnbPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 50, 0, 0"/>
+            <On Platform="Android" Value="0, 20, 0, 0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout>
+        <SearchBar x:Name="SearchBar_Flights" Text="Search..." TextChanged="SearchBar_Flights_TextChanged" />
+        <ListView x:Name="ListView_Flights" 
+                  IsGroupingEnabled="True" GroupDisplayBinding="{Binding Title}"
+                  IsPullToRefreshEnabled="True" Refreshing="ListView_Flights_Refreshing"
+                  ItemSelected="ListView_Flights_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Location}" Detail="{Binding Period}">
+                        <TextCell.ContextActions>
+                            <MenuItem 
+                                Text="Delete"
+                                IsDestructive="True"
+                                Clicked="MenuItem_OnDelete_Clicked"
+                                CommandParameter="{Binding .}"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,5 +1,6 @@
 ﻿using System;
 using Forms.Images;
+using Forms.Lists;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,7 +28,8 @@ namespace Forms
             //MainPage = new ImagePage1();
 
             // 05. Lists
-            MainPage = new Forms.Lists.BasicListPage();
+            //MainPage = new Forms.Lists.BasicListPage();
+            MainPage = new AirbnbPage();
         }
 
         protected override void OnStart()
