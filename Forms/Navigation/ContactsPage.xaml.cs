@@ -10,8 +10,9 @@ using Xamarin.Forms.Xaml;
 
 namespace Forms.Navigation
 {
+    //public partial class ContactsPage : ContentPage
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ContactsPage : ContentPage
+    public partial class ContactsPage : MasterDetailPage
     {
         private List<Contact> contacts;
 
@@ -30,13 +31,15 @@ namespace Forms.Navigation
             ListView_Contracts.ItemsSource = contacts;
         }
 
-        private async void ListView_Contracts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void ListView_Contracts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem == null)
-                return;
+            //if (e.SelectedItem == null)
+            //    return;
             var contact = e.SelectedItem as Contact;
-            await Navigation.PushAsync(new ContactDetailPage(contact));
-            ListView_Contracts.SelectedItem = null;
+            //await Navigation.PushAsync(new ContactDetailPage(contact));
+            Detail = new NavigationPage(new ContactDetailPage(contact));
+            //ListView_Contracts.SelectedItem = null;
+            IsPresented = false; // IsMasterPresented.
         }
     }
 }
