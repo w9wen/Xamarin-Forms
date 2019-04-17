@@ -1,6 +1,7 @@
 ﻿using System;
 using Forms.Images;
 using Forms.Lists;
+using Forms.Navigation;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,7 +30,13 @@ namespace Forms
 
             // 05. Lists
             //MainPage = new Forms.Lists.BasicListPage();
-            MainPage = new AirbnbPage();
+            //MainPage = new AirbnbPage();
+
+            // 06. Navigation
+            MainPage = new NavigationPage(new WelcomePage()) {
+                BarBackgroundColor = Color.Gray,
+                BarTextColor = Color.White,
+            };
         }
 
         protected override void OnStart()
