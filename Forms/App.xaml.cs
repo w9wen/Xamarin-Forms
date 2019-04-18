@@ -38,7 +38,8 @@ namespace Forms
             //    BarTextColor = Color.White,
             //};
             //MainPage =new NavigationPage( new ContactsPage());
-            MainPage = new ContactsPage();
+            //MainPage = new ContactsPage();
+            MainPage = new TabbedNaviPage();
         }
 
         protected override void OnStart()
