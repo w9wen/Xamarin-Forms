@@ -13,6 +13,7 @@
         <Label Text="Content of Page 1" HorizontalOptions="Center" VerticalOptions="Center"/>
     </ContentPage>
     <ContentPage Title="Page 2" Icon="clock.png" >
-        <Button Text="Content of Page 2" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Display Action Sheet" HorizontalOptions="Center" VerticalOptions="Center"
+                Clicked="Button_Clicked"/>
     </ContentPage>
 </TabbedPage>

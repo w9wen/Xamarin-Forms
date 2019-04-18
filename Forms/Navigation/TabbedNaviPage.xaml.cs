@@ -16,5 +16,11 @@ namespace Forms.Navigation
         {
             InitializeComponent();
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            var response = await DisplayActionSheet("title", "cance", "DELETE", "Yesterday", "Today", "Tomorrow");
+            await DisplayAlert("Response", response, "OK");
+        }
     }
 }
