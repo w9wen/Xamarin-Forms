@@ -4,5 +4,5 @@
             x:Class="Forms.Navigation.InstagramPage"
             xmlns:local="clr-namespace:Forms.Navigation">
     <local:ActivityFeedPage Title="Activities" Icon="heart.png"/>
-    <ContentPage Title="Profile" Icon="user.png"/>
+    <local:MyProfilePage Title="Profile" Icon="user.png"/>
 </TabbedPage>
