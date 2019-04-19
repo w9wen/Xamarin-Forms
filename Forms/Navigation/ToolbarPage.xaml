@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.Navigation.ToolbarPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Default" Order="Default" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Primary" Order="Primary" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Secondary" Order="Secondary" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Secondary 2" Order="Secondary" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Label Text="ToolbarItems" HorizontalOptions="Center" VerticalOptions="Center"/>
+</ContentPage>
