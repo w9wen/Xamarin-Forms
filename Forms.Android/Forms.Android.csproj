@@ -73,6 +73,12 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\heart" />
+    <AndroidResource Include="Resources\drawable-hdpi\heart" />
+    <AndroidResource Include="Resources\drawable-hdpi\user" />
+    <AndroidResource Include="Resources\drawable-xhdpi\user" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\heart" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\user" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -112,6 +118,12 @@
       <Project>{A03C2A34-6318-4830-BC1A-D38A52376FA0}</Project>
       <Name>Forms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\heart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
