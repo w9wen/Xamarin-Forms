@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Forms.Navigation.InstagramPage">
-    <ContentPage Title="Activities" Icon="heart.png"/>
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Forms.Navigation.InstagramPage"
+            xmlns:local="clr-namespace:Forms.Navigation">
+    <local:ActivityFeedPage Title="Activities" Icon="heart.png"/>
     <ContentPage Title="Profile" Icon="user.png"/>
 </TabbedPage>
