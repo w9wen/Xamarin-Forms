@@ -41,7 +41,7 @@ namespace Forms
             //MainPage = new ContactsPage();
             //MainPage = new TabbedNaviPage();
             //MainPage = new NavigationPage(new ToolbarPage()); // new ToolbarPage();
-            MainPage = new InstagramPage();
+            MainPage = new NavigationPage(new InstagramPage());
         }
 
         protected override void OnStart()

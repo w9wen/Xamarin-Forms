@@ -28,6 +28,7 @@ namespace Forms.Navigation
 
             var activity = e.SelectedItem as Activity;
             ListView_ActivityFeed.SelectedItem = null;
+            Navigation.PushAsync(new UserProfilePage(activity.UserId));
         }
     }
 }
