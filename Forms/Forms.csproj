@@ -17,6 +17,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="GridPage.cs" />
+    <Compile Remove="Controls\MyPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="AbsolutePage.xaml.cs">
@@ -29,6 +30,7 @@
   <ItemGroup>
     <Folder Include="MarkupExtensions\" />
     <Folder Include="Lists\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Images\background.jpg" />
