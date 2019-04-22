@@ -11,5 +11,15 @@ namespace Forms.Controls
         {
             InitializeComponent();
         }
+
+        private void EntryCell_Completed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SwitchCell_OnChanged(object sender, ToggledEventArgs e)
+        {
+
+        }
     }
 }
