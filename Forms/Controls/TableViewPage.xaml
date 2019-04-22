@@ -14,6 +14,56 @@
                     </StackLayout>
                 </ViewCell>
             </TableSection>
+            <TableSection Title="Controls">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Switch" VerticalOptions="Center"/>
+                        <Switch HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Slider" VerticalOptions="Center"/>
+                        <Slider HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Stepper" VerticalOptions="Center"/>
+                        <Stepper HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Entry" VerticalOptions="Center"/>
+                        <Entry HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Editor" VerticalOptions="Center"/>
+                        <Editor HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Picker" VerticalOptions="Center"/>
+                        <Picker HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Date Picker" VerticalOptions="Center"/>
+                        <DatePicker HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                        <Label Text="Time Picker" VerticalOptions="Center"/>
+                        <TimePicker HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
         </TableRoot>
         <!--</TableView.Root>-->
     </TableView>
