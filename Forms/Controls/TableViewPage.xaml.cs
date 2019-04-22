@@ -19,7 +19,12 @@ namespace Forms.Controls
 
         private void SwitchCell_OnChanged(object sender, ToggledEventArgs e)
         {
+            //Label_Switch.IsVisible = e.Value;
+        }
 
+        private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            //Label_SliderValue.Text = e.NewValue.ToString();
         }
     }
 }

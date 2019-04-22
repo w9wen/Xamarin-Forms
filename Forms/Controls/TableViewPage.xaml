@@ -18,13 +18,29 @@
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Switch" VerticalOptions="Center"/>
-                        <Switch HorizontalOptions="EndAndExpand"/>
+                        <!--<Switch HorizontalOptions="Center" VerticalOptions="Center"
+                                IsToggled="True" Toggled="SwitchCell_OnChanged"/>
+                        <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                               Text="Can you see me?"
+                               x:Name="Label_Switch"/>-->
+                        <Switch HorizontalOptions="Center" VerticalOptions="Center"
+                                IsToggled="True" x:Name="Switch_IsVisible"/>
+                        <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                               Text="Can you see me?" IsVisible="{Binding Source={x:Reference Switch_IsVisible}, Path=IsToggled}"/>
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Slider" VerticalOptions="Center"/>
-                        <Slider HorizontalOptions="EndAndExpand"/>
+                        <!--<Slider HorizontalOptions="Center" Maximum="100" Minimum="0"
+                                ValueChanged="Slider_ValueChanged"/>
+                        <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                               Text="Show the slider value"
+                               x:Name="Label_SliderValue"/>-->
+                        <Slider HorizontalOptions="Center" Maximum="1000" Minimum="0" Value="10"
+                                x:Name="Slider_Value"/>
+                        <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                               Text="{Binding Source={x:Reference Slider_Value}, Path=Value, StringFormat='{0:N0}'}"/> 
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
