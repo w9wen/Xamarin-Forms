@@ -1,4 +1,5 @@
 ﻿using System;
+using Forms.Controls;
 using Forms.Images;
 using Forms.Lists;
 using Forms.Navigation;
@@ -41,7 +42,8 @@ namespace Forms
             //MainPage = new ContactsPage();
             //MainPage = new TabbedNaviPage();
             //MainPage = new NavigationPage(new ToolbarPage()); // new ToolbarPage();
-            MainPage = new InstagramPage();
+            //MainPage = new InstagramPage();
+            MainPage = new TableViewPage();
         }
 
         protected override void OnStart()
