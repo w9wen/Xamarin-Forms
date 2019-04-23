@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Controls.TableViewPage"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Forms.Extensions">
     <TableView Intent="Form">
         <!--<TableView.Root>-->
         <TableRoot>
@@ -41,7 +42,7 @@
                         <Slider HorizontalOptions="Center" Maximum="1000" Minimum="0" Value="10"
                                 x:Name="Slider_Value"/>
                         <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center"
-                               Text="{Binding Source={x:Reference Slider_Value}, Path=Value, StringFormat='{0:F0}'}"/> 
+                               Text="{Binding Source={x:Reference Slider_Value}, Path=Value, StringFormat='{0:F0}'}"/>
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
@@ -79,13 +80,15 @@
                         </Picker>
                     </StackLayout>
                 </ViewCell>
-                <ViewCell>
+                <!--<ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Date Picker" VerticalOptions="Center"/>
                         <DatePicker HorizontalOptions="EndAndExpand" Date="{x:Static sys:DateTime.Today}" Format="yyyy-MM-dd"
                                     MinimumDate="2019 04 01" MaximumDate="2019 04 30"/>
                     </StackLayout>
-                </ViewCell>
+                </ViewCell>-->
+                <local:DateCellPage LabelText="Start"/>
+                <local:DateCellPage LabelText="End"/>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Time Picker" VerticalOptions="Center"/>
