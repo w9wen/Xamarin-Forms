@@ -43,7 +43,8 @@ namespace Forms
             //MainPage = new TabbedNaviPage();
             //MainPage = new NavigationPage(new ToolbarPage()); // new ToolbarPage();
             //MainPage = new InstagramPage();
-            MainPage = new TableViewPage();
+            //MainPage = new TableViewPage();
+            MainPage = new NavigationPage(new TableViewPage());
         }
 
         protected override void OnStart()

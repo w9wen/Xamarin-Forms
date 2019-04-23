@@ -97,6 +97,16 @@
                         <!--Time="{x:Static sys:DateTime.Now.TimeOfDay}" Format="hh:mm"-->
                     </StackLayout>
                 </ViewCell>
+                <ViewCell Tapped="ViewCell_Tapped">
+                    <StackLayout Orientation="Horizontal" Padding="13, 5">
+                        <Label Text="Contact Method" VerticalOptions="Center"/>
+                        <Label x:Name="Label_ContactMethod"
+                               VerticalOptions="Center"
+                               HorizontalOptions="EndAndExpand"
+                               Text="None"
+                               TextColor="Gray"/>
+                    </StackLayout>
+                </ViewCell>
             </TableSection>
         </TableRoot>
         <!--</TableView.Root>-->

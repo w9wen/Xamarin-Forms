@@ -73,5 +73,20 @@ namespace Forms.Controls
             var contactMethod = _contactMethods.Single(cm => cm.Name == name);
             DisplayAlert("Picker Selected", contactMethod.Name, "OK");
         }
+
+        //private async void ViewCell_Tapped(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new ContactMethodPage());
+        //}
+        private void ViewCell_Tapped(object sender, EventArgs e)
+        {
+            var page = new ContactMethodPage();
+            page.ContactMethods.ItemSelected += (source, args)=>
+            {
+                Label_ContactMethod.Text = args.SelectedItem.ToString();
+                Navigation.PopAsync();
+            };
+            Navigation.PushAsync(page);
+        }
     }
 }

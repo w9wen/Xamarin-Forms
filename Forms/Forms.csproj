@@ -23,6 +23,9 @@
     <Compile Update="AbsolutePage.xaml.cs">
       <DependentUpon>AbsolutePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\ContactMethodPage.xaml.cs">
+      <DependentUpon>ContactMethodPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Navigation\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
@@ -30,7 +33,6 @@
   <ItemGroup>
     <Folder Include="MarkupExtensions\" />
     <Folder Include="Lists\" />
-    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Images\background.jpg" />
@@ -39,6 +41,9 @@
     <EmbeddedResource Include="Images\background.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="Controls\ContactMethodPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Extensions\DateCellPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
