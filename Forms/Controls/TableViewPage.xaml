@@ -40,31 +40,42 @@
                         <Slider HorizontalOptions="Center" Maximum="1000" Minimum="0" Value="10"
                                 x:Name="Slider_Value"/>
                         <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center"
-                               Text="{Binding Source={x:Reference Slider_Value}, Path=Value, StringFormat='{0:N0}'}"/> 
+                               Text="{Binding Source={x:Reference Slider_Value}, Path=Value, StringFormat='{0:F0}'}"/> 
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Stepper" VerticalOptions="Center"/>
-                        <Stepper HorizontalOptions="EndAndExpand"/>
+                        <Stepper x:Name="Stepper_Value"
+                                 Maximum="100" Minimum="10" Increment="2"/>
+                        <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center" Text="{Binding Source={x:Reference Stepper_Value}, Path=Value, StringFormat='{0:F0}'}"/>
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Entry" VerticalOptions="Center"/>
-                        <Entry HorizontalOptions="EndAndExpand"/>
+                        <Entry HorizontalOptions="EndAndExpand" Keyboard="Numeric" Placeholder="Phone"/>
+                        <Entry IsPassword="True" TextChanged="Entry_TextChanged" Completed="Entry_Completed"/>
+                        <Label x:Name="Label_Entry"/>
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
-                    <StackLayout Orientation="Horizontal" Padding="16, 0">
+                    <StackLayout Orientation="Horizontal" Padding="16, 0"
+                                 BackgroundColor="Gray">
                         <Label Text="Editor" VerticalOptions="Center"/>
-                        <Editor HorizontalOptions="EndAndExpand"/>
+                        <Editor HorizontalOptions="EndAndExpand" BackgroundColor="Yellow"/>
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
-                        <Label Text="Picker" VerticalOptions="Center"/>
-                        <Picker HorizontalOptions="EndAndExpand"/>
+                        <Label Text="Picker" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Picker HorizontalOptions="CenterAndExpand" x:Name="Picker_Selected"
+                                Title="Contact Method" BackgroundColor="Yellow" SelectedIndexChanged="Picker_Selected_SelectedIndexChanged">
+                            <!--<Picker.Items>
+                                <x:String>SMS</x:String>
+                                <x:String>Email</x:String>
+                            </Picker.Items>-->
+                        </Picker>
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
