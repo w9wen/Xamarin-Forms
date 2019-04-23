@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Controls.TableViewPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Forms.Controls.TableViewPage"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <TableView Intent="Form">
         <!--<TableView.Root>-->
         <TableRoot>
@@ -81,13 +82,16 @@
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Date Picker" VerticalOptions="Center"/>
-                        <DatePicker HorizontalOptions="EndAndExpand"/>
+                        <DatePicker HorizontalOptions="EndAndExpand" Date="{x:Static sys:DateTime.Today}" Format="yyyy-MM-dd"
+                                    MinimumDate="2019 04 01" MaximumDate="2019 04 30"/>
                     </StackLayout>
                 </ViewCell>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" Padding="16, 0">
                         <Label Text="Time Picker" VerticalOptions="Center"/>
-                        <TimePicker HorizontalOptions="EndAndExpand"/>
+                        <TimePicker HorizontalOptions="EndAndExpand"
+                                    x:Name="TimePicker_Now" Format="hh:mm"/>
+                        <!--Time="{x:Static sys:DateTime.Now.TimeOfDay}" Format="hh:mm"-->
                     </StackLayout>
                 </ViewCell>
             </TableSection>

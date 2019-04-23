@@ -36,6 +36,8 @@ namespace Forms.Controls
             {
                 Picker_Selected.Items.Add(method.Name);
             }
+
+            TimePicker_Now.Time = DateTime.Now.TimeOfDay;
         }
 
         private void EntryCell_Completed(object sender, EventArgs e)
