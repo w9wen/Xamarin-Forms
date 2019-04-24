@@ -38,5 +38,10 @@ namespace Forms.Controls
             if (await DisplayAlert("Warning", $"Are you sure want to delete {contact.FullName}", "Yes", "No"))
                 _contacts.Remove(contact);
         }
+
+        private async void ListView_Contacts_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            await Navigation.PushAsync(new ContactDetailPage());
+        }
     }
 }
