@@ -17,6 +17,10 @@ namespace Forms.Models
         public bool IsBlocked { get; set; }
         public string FullName
         {
+            // Note the string interpolation syntax in C# 6. Read my blog post
+            // for details: 
+            // 
+            // http://programmingwithmosh.com/csharp/csharp-6-features-that-help-you-write-cleaner-code/
             get { return $"{FirstName} {LastName}"; }
         }
     }
