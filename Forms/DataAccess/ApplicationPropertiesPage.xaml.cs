@@ -12,30 +12,33 @@ namespace Forms.DataAccess
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ApplicationPropertiesPage : ContentPage
     {
+        //private const string DescriptionKey = "Description";
+        //private const string NotificationKey = "NotificationKey";
+
         public ApplicationPropertiesPage()
         {
+            var app = Application.Current as App;
             InitializeComponent();
+            BindingContext = app;
+            //EntryCell_Description.Text = app.Description;
 
-            if (Application.Current.Properties.ContainsKey("Description"))
-                EntryCell_Description.Text = Application.Current.Properties["Description"].ToString();
-
-            if (Application.Current.Properties.ContainsKey("Notification"))
-                SwitchCell_Notification.On = (bool)Application.Current.Properties["Notification"];
+            //SwitchCell_Notification.On = app.Notification;
         }
 
-        protected async override void OnDisappearing()
-        {
-            await Application.Current.SavePropertiesAsync();
-            base.OnDisappearing();
-        }
+        //protected async override void OnDisappearing()
+        //{
+            //await Application.Current.SavePropertiesAsync();
+        //    base.OnDisappearing();
+        //}
 
-        private void InputOnChanged(object sender, EventArgs e)
-        {
-            Application.Current.Properties["Description"] = EntryCell_Description.Text;
-            Application.Current.Properties["Notification"] = SwitchCell_Notification.On;
+        //private void InputOnChanged(object sender, EventArgs e)
+        //{
+            //var app = Application.Current as App;
+            //app.Description = EntryCell_Description.Text;
+            //app.Notification = SwitchCell_Notification.On;
 
             //Application.Current.SavePropertiesAsync();
-        }
+        //}
 
     }
 }

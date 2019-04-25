@@ -11,6 +11,9 @@ namespace Forms
 {
     public partial class App : Application
     {
+        private const string DescriptionKey = "Description";
+        private const string NotificationKey = "NotificationKey";
+
         public App()
         {
             InitializeComponent();
@@ -63,6 +66,34 @@ namespace Forms
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public string Description
+        {
+            get
+            {
+                if (Properties.ContainsKey(DescriptionKey))
+                    return Properties[DescriptionKey].ToString();
+                return "";
+            }
+            set
+            {
+                Properties[DescriptionKey] = value;
+            }
+        }
+
+        public bool Notification
+        {
+            get
+            {
+                if (Properties.ContainsKey(NotificationKey))
+                    return (bool)Properties[NotificationKey];
+                return false;
+            }
+            set
+            {
+                Properties[NotificationKey] = value;
+            }
         }
     }
 }

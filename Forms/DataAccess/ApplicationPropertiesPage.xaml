@@ -5,8 +5,10 @@
     <TableView>
         <TableRoot>
             <TableSection Title="Application">
-                <EntryCell x:Name="EntryCell_Description" Text="{Binding Description}" Placeholder="Some tip here." Completed="InputOnChanged"/>
-                <SwitchCell x:Name="SwitchCell_Notification" Text="Notification" On="{Binding Notification}" OnChanged="InputOnChanged"/>
+                <!--<EntryCell x:Name="EntryCell_Description" Text="{Binding Description}" Placeholder="Some tip here." Completed="InputOnChanged"/>
+                <SwitchCell x:Name="SwitchCell_Notification" Text="Notification" On="{Binding Notification}" OnChanged="InputOnChanged"/>-->
+                <EntryCell Text="{Binding Description}" Placeholder="Some tip here."/>
+                <SwitchCell Text="Notification" On="{Binding Notification}"/>
             </TableSection>
         </TableRoot>
     </TableView>
