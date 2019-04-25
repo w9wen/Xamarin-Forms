@@ -27,9 +27,14 @@ namespace Forms.Controls
             ListView_Contacts.ItemsSource = _contacts;
         }
 
-        private void ToolbarItem_Add_Clicked(object sender, EventArgs e)
+        private async void ToolbarItem_Add_Clicked(object sender, EventArgs e)
         {
-
+            var contactDetailPage = new ContactDetailPage(new Contact());
+            contactDetailPage.ContactAdded += (source, contact) =>
+              {
+                  _contacts.Add(contact);
+              };
+            await Navigation.PushAsync(contactDetailPage);
         }
 
         private async void MenuItem_Delete_Clicked(object sender, EventArgs e)
@@ -39,9 +44,26 @@ namespace Forms.Controls
                 _contacts.Remove(contact);
         }
 
-        private async void ListView_Contacts_ItemTapped(object sender, ItemTappedEventArgs e)
+
+
+        private async void ListView_Contacts_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushAsync(new ContactDetailPage());
+            var selectedContact = e.SelectedItem as Contact;
+            if (selectedContact == null)
+                return;
+            var contactDetailPage = new ContactDetailPage(selectedContact);
+            ListView_Contacts.SelectedItem = null;
+            contactDetailPage.ContactUpdated += (source, contact) =>
+               {
+                   selectedContact.id = contact.id;
+                   selectedContact.FirstName = contact.FirstName;
+                   selectedContact.LastName = contact.LastName;
+                   selectedContact.Phone = contact.Phone;
+                   selectedContact.Email = contact.Email;
+                   selectedContact.IsBlocked = contact.IsBlocked;
+               };
+            await Navigation.PushAsync(contactDetailPage);
+            //await Navigation.PushAsync(new ContactDetailPage(e.SelectedItem as Contact));
         }
     }
 }

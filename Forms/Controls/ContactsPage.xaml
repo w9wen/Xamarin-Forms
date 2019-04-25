@@ -5,7 +5,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="ToolbarItem_Add_Clicked"/>
     </ContentPage.ToolbarItems>
-    <ListView x:Name="ListView_Contacts" ItemTapped="ListView_Contacts_ItemTapped">
+    <ListView x:Name="ListView_Contacts" ItemSelected="ListView_Contacts_ItemSelectedAsync">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding FullName}">
