@@ -50,7 +50,10 @@ namespace Forms
             //MainPage = new TableViewPage();
             //MainPage = new NavigationPage(new TableViewPage());
             //MainPage = new NavigationPage(new Controls.ContactsPage());
-            MainPage = new ApplicationPropertiesPage();
+
+            // 08. Data Access
+            //MainPage = new ApplicationPropertiesPage();
+            MainPage = new FileSystemPage();
         }
 
         protected override void OnStart()
