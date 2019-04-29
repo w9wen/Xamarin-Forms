@@ -38,5 +38,12 @@ namespace Forms.DataAccess
                 });
             }
         }
+
+        private async void ListView_MenuItem_Delete_Clicked(object sender, EventArgs e)
+        {
+            var todoItem = (sender as MenuItem).CommandParameter as TodoItem;
+            await App.Database.DeleteItem(todoItem);
+            //await DisplayAlert("TodoItem", todoItem.Name, "OK");
+        }
     }
 }
