@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.DataAccess.TodoItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ToolbarItem_Insert" Text="+" Clicked="ToolbarItem_Insert_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="ListView_TodoItems" ItemSelected="ListView_TodoItems_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Name}"/>
+                        <Image Source="clock.png" IsVisible="{Binding Done}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using Forms.Controls;
+using Forms.Data;
 using Forms.DataAccess;
 using Forms.Images;
 using Forms.Lists;
@@ -13,6 +15,8 @@ namespace Forms
     {
         private const string DescriptionKey = "Description";
         private const string NotificationKey = "NotificationKey";
+
+        private static TodoItemDatabase _database;
 
         public App()
         {
@@ -53,7 +57,8 @@ namespace Forms
 
             // 08. Data Access
             //MainPage = new ApplicationPropertiesPage();
-            MainPage = new FileSystemPage();
+            //MainPage = new FileSystemPage();
+            MainPage = new NavigationPage(new TodoItemsPage());
         }
 
         protected override void OnStart()
@@ -96,6 +101,19 @@ namespace Forms
             set
             {
                 Properties[NotificationKey] = value;
+            }
+        }
+        public static TodoItemDatabase Database
+        {
+            get
+            {
+                if (_database == null)
+                {
+                    _database = new TodoItemDatabase(Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                        "TodoItemSQLite.db3"));
+                }
+                return _database;
             }
         }
     }
