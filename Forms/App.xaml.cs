@@ -58,7 +58,8 @@ namespace Forms
             // 08. Data Access
             //MainPage = new ApplicationPropertiesPage();
             //MainPage = new FileSystemPage();
-            MainPage = new NavigationPage(new TodoItemsPage());
+            //MainPage = new NavigationPage(new TodoItemsPage());
+            MainPage = new RESTfulPage();
         }
 
         protected override void OnStart()

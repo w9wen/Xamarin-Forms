@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.DataAccess.RESTfulPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="Button_Add" Text="Add" Clicked="Button_Add_Clicked"/>
+            <Button x:Name="Button_Update" Text="Update" Clicked="Button_Update_Clicked"/>
+            <Button x:Name="Button_Delete" Text="Delete" Clicked="Button_Delete_Clicked"/>
+            <ListView x:Name="ListView_Posts">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
