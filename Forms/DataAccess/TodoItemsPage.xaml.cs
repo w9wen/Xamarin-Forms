@@ -45,5 +45,12 @@ namespace Forms.DataAccess
             await App.Database.DeleteItem(todoItem);
             //await DisplayAlert("TodoItem", todoItem.Name, "OK");
         }
+
+        private async void ListView_MenuItem_Update_Clicked(object sender, EventArgs e)
+        {
+            var todoItem = (sender as MenuItem).CommandParameter as TodoItem;
+            todoItem.Name += " UPDATE";
+            await App.Database.SaveItemAsync(todoItem);
+        }
     }
 }

@@ -14,6 +14,7 @@
                         <Image Source="clock.png" IsVisible="{Binding Done}"/>
                     </StackLayout>
                     <ViewCell.ContextActions>
+                        <MenuItem x:Name="ListView_MenuItem_Update" Text="Update" CommandParameter="{Binding .}" Clicked="ListView_MenuItem_Update_Clicked"/>
                         <MenuItem x:Name="ListView_MenuItem_Delete" Text="Delete" IsDestructive="True" CommandParameter="{Binding .}" Clicked="ListView_MenuItem_Delete_Clicked"/>
                     </ViewCell.ContextActions>
                 </ViewCell>
